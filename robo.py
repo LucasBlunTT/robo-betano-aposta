@@ -5,6 +5,7 @@ import re
 
 entrada = 'Entrada'
 green = 'GREEN'
+red = 'Red'
 
 pyautogui.mouseInfo()
 
@@ -22,7 +23,7 @@ def verificarGreen():
         pyautogui.doubleClick()
         pyautogui.hotkey('ctrl','c')
         variavelGreen = pyperclip.paste() 
-        if(variavelGreen != green):
+        if(variavelGreen != green or variavelGreen != red):
             print('VERIFICANDO GREEN PARA CONTINUAR')
         else:
             break
