@@ -10,9 +10,22 @@ pyautogui.mouseInfo()
 
 
 def jogar():
-    #pyautogui.moveTo(3038,840)
+    #pyautogui.moveTo(3038,840) # entrada betano
+    pyautogui.moveTo(3105,654)
     pyautogui.click()
     print('...::: ENTROU COM A APOSTA :::...')
+    verificarGreen()
+    
+def verificarGreen():
+     while(True):
+        pyautogui.moveTo(4101,1094)
+        pyautogui.doubleClick()
+        pyautogui.hotkey('ctrl','c')
+        variavelGreen = pyperclip.paste() 
+        if(variavelGreen != green):
+            print('VERIFICANDO GREEN PARA CONTINUAR')
+        else:
+            break
        
 #def verificarOddFazerG2(variavelEntradaApos):
     #pyautogui.moveTo(574,351)
@@ -40,7 +53,6 @@ def jogar():
         #print ("cai no else")  
         #verificarOddFazerG2(variavelEntradaApos)         
       
-sleep(10)
 while (True):
         
     # Mover até a palavra ENTRADA
@@ -58,8 +70,7 @@ while (True):
     # Colar conteudo
     variavelEntrada = pyperclip.paste()
     
-    if(variavelEntrada == entrada):
-        variavelEntrada = ''
+    if(variavelEntrada == entrada):      
         
         #--- Pegado o valor da entrada ---
         #pyautogui.moveTo(4269,1041)
@@ -96,6 +107,3 @@ while (True):
                        
     else:    
         print('Esperando ENTRADA ')
-        
-
-
